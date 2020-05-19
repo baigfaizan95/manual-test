@@ -1,6 +1,6 @@
-import React from 'react';
-import Document, { Html, Main, NextScript, Head } from 'next/document';
-import { ServerStyleSheets } from '@material-ui/core/styles';
+import React from "react";
+import Document, { Html, Main, NextScript, Head } from "next/document";
+import { ServerStyleSheets } from "@material-ui/core/styles";
 
 class MyDocument extends Document {
   static async getInitialProps(ctx) {
@@ -11,8 +11,13 @@ class MyDocument extends Document {
 
   render() {
     return (
-      <Html lang='en'>
-        <Head />
+      <Html lang="en">
+        <Head>
+          <link
+            href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans&display=swap"
+            rel="stylesheet"
+          />
+        </Head>
         <body>
           <Main />
           <NextScript />
@@ -59,10 +64,7 @@ MyDocument.getInitialProps = async (ctx) => {
   return {
     ...initialProps,
     // Styles fragment is rendered after the app and page rendering finish.
-    styles: [
-      ...React.Children.toArray(initialProps.styles),
-      sheets.getStyleElement(),
-    ],
+    styles: [...React.Children.toArray(initialProps.styles), sheets.getStyleElement()],
   };
 };
 

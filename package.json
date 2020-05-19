@@ -17,8 +17,7 @@
     "next": "9.4.1",
     "prettier": "^2.0.5",
     "react": "16.13.1",
-    "react-dom": "16.13.1",
-    "webfontloader": "^1.6.28"
+    "react-dom": "16.13.1"
   },
   "devDependencies": {
     "@zeit/next-bundle-analyzer": "^0.1.2",
