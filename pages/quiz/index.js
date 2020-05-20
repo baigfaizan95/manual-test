@@ -29,7 +29,7 @@ const Quiz = () => {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-  }, [activeStep]);
+  }, [activeStep, submit]);
 
   const handleNext = () => {
     setActiveStep((prevActiveStep) => prevActiveStep + 1);
