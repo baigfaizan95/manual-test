@@ -47,7 +47,7 @@ const Quiz = () => {
     if (activeStep === 0 && selection[0] === null) {
       return true;
     }
-    if (activeStep === 1 && selection[0] === null) {
+    if (activeStep === 1 && selection[1] === null) {
       return true;
     }
   };
@@ -90,7 +90,7 @@ const Quiz = () => {
               )}
             </div>
           </div>
-        ) : selection.every((s) => s) ? (
+        ) : selection.includes(true) ? (
           <div className={classes.result}>
             <div className={classes.status}>
               <AiOutlineWarning size={130} />
