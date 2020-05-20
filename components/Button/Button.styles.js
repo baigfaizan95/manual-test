@@ -19,6 +19,10 @@ const useStyles = makeStyles((theme) => {
       "&:hover": {
         boxShadow: "0 10px 30px -17px rgba(0, 0, 0, 0.5)",
       },
+      "&:disabled": {
+        cursor: "not-allowed",
+        backgroundColor: "rgba(141, 207, 210, 0.5)",
+      },
     },
   };
 });

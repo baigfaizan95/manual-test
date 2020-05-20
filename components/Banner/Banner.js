@@ -1,22 +1,25 @@
 import React from "react";
 import Container from "@material-ui/core/Container";
+import { useRouter } from "next/router";
 
 /* Assets */
 import BannerImage from "@/assets/banner.jpg";
-import Logo from "@/assets/logo.svg";
 
 import useStyles from "./Banner.styles";
 import Button from "../Button/Button";
 
 const Banner = () => {
   const classes = useStyles();
+  const router = useRouter();
+
+  const handleClick = (e) => {
+    e.preventDefault();
+    router.push("/quiz");
+  };
 
   return (
     <div className={classes.root} style={{ backgroundImage: `url(${BannerImage})` }}>
       <Container>
-        <div className={classes.logo}>
-          <img src={Logo} alt="logo" />
-        </div>
         <div className={classes.wrapper}>
           <h1 className={classes.title}>
             be good <br /> to yourself
@@ -26,7 +29,7 @@ const Banner = () => {
             and out.
           </p>
           <div className={classes.button}>
-            <Button>take the quiz</Button>
+            <Button onClick={handleClick}>take the quiz</Button>
           </div>
         </div>
       </Container>

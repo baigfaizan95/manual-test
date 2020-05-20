@@ -64,7 +64,7 @@ const useStyles = makeStyles(() => {
       "& > div": {
         left: "30%",
         ...breakpoint(keys.md, "down", {
-          left: "23%",
+          left: "25%",
         }),
         ...breakpoint(keys.sm, "down", {
           left: "50%",
@@ -105,7 +105,7 @@ const useStyles = makeStyles(() => {
       ...breakpoint(keys.md, "down", {
         fontSize: "250px",
         top: "50%",
-        left: "70%",
+        left: "72%",
       }),
       ...breakpoint(keys.sm, "down", {
         left: "50%",
@@ -114,8 +114,10 @@ const useStyles = makeStyles(() => {
       }),
     },
     image: {
+      width: "50%",
       ...breakpoint(keys.sm, "down", {
-        maxWidth: "350px",
+        width: "100%",
+        maxWidth: "400px",
         margin: "auto",
       }),
     },

@@ -2,13 +2,18 @@ import React from "react";
 import Container from "@material-ui/core/Container";
 
 import Hair from "@/assets/hair.jpg";
+import Hair2 from "@/assets/hair@2x.jpg";
+import Hair3 from "@/assets/hair@3x.jpg";
 import Hand from "@/assets/hand.jpg";
+import Hand2 from "@/assets/hand@2x.jpg";
+import Hand3 from "@/assets/hand@3x.jpg";
 
 import useStyles from "./HelpSection.styles";
 
 const data = [
   {
     logo: Hair,
+    srcSet: [Hair2, Hair3],
     title: "HAIR LOSS",
     subTitle: "Hair loss needn’t be irreversible. We can help!",
     description:
@@ -16,6 +21,7 @@ const data = [
   },
   {
     logo: Hand,
+    srcSet: [Hand2, Hand3],
     title: "Erectile Dysfunction",
     subTitle: "Erections can be a tricky thing. But no need to feel down!",
     description:
@@ -32,7 +38,7 @@ const HelpSection = () => {
           <p className={classes.headline}>What we can help with</p>
           {data.map((d, i) => (
             <div className={classes.data} key={i}>
-              <img className={classes.image} src={d.logo} alt="logo" />
+              <img className={classes.image} src={d.logo} srcSet={d.srcSet.join(", ")} alt="logo" />
               <div className={i % 2 === 0 ? classes.help : classes.helpReverse}>
                 <p className={classes.title}>{d.title}</p>
                 <p className={classes.subTitle}>{d.subTitle}</p>

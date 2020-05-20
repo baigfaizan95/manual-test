@@ -20,12 +20,12 @@ const useStyles = makeStyles((theme) => {
     wrapper: {
       maxWidth: "650px",
       paddingLeft: "40px",
-      paddingTop: "105px",
+      paddingTop: "172px",
       ...breakpoint(1099, "down", {
         paddingLeft: 0,
       }),
       ...breakpoint(keys.sm, "down", {
-        paddingTop: "70px",
+        paddingTop: "130px",
       }),
     },
     title: {

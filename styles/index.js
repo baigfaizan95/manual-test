@@ -11,6 +11,13 @@ const theme = createMuiTheme({
         },
       },
     },
+    MuiStepIcon: {
+      text: {
+        fill: variables.white,
+        fontFamily: variables.montserrat,
+        fontWeight: "bold",
+      },
+    },
     MuiCssBaseline: {
       "@global": {
         "*": {
@@ -34,18 +41,21 @@ const theme = createMuiTheme({
           color: "inherit",
           textDecoration: "none",
         },
-        html: {
-          scrollBehavior: "smooth",
-        },
         body: {
           color: variables.fontColor,
           fontFamily: variables.fontFamily,
+          backgroundColor: variables.white,
         },
         img: {
           width: "100%",
           height: "auto",
         },
       },
+    },
+  },
+  palette: {
+    primary: {
+      main: variables.primary,
     },
   },
 });
