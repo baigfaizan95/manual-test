@@ -15,7 +15,7 @@ const useStyles = makeStyles((theme) => {
       borderRadius: "49.5px",
       boxShadow: "0 10px 30px -20px rgba(0, 0, 0, 0.5)",
       cursor: "pointer",
-      transition: "all 0.3s",
+      transition: "box-shadow 0.3s",
       "&:hover": {
         boxShadow: "0 10px 30px -17px rgba(0, 0, 0, 0.5)",
       },
