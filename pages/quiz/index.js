@@ -43,15 +43,6 @@ const Quiz = () => {
     setSelection((arr) => [...arr.slice(0, activeStep), value, ...arr.slice(activeStep + 1)]);
   };
 
-  const getNextDisabled = () => {
-    if (activeStep === 0 && selection[0] === null) {
-      return true;
-    }
-    if (activeStep === 1 && selection[1] === null) {
-      return true;
-    }
-  };
-
   return (
     <div className={classes.root}>
       <Container>
@@ -79,7 +70,7 @@ const Quiz = () => {
             <div className={classes.footer}>
               {activeStep !== 0 && <Button onClick={handleBack}>Back</Button>}
               {activeStep !== 2 && (
-                <Button onClick={handleNext} disabled={getNextDisabled()}>
+                <Button onClick={handleNext} disabled={selection[activeStep] === null}>
                   Next
                 </Button>
               )}
