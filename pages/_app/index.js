@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import App from "next/app";
+import Head from "next/head";
 
 /* Library */
 import { ThemeProvider, makeStyles } from "@material-ui/core/styles";
@@ -38,6 +39,9 @@ const MyApp = ({ Component, pageProps }) => {
   }, []);
   return (
     <div className={classes.root}>
+      <Head>
+        <title>Manual: Men&apos;s Healthcare. Made easy. More than pharmacy</title>
+      </Head>
       <ThemeProvider theme={theme}>
         <CssBaseline>
           <Header />

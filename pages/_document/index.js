@@ -19,7 +19,6 @@ class MyDocument extends Document {
             href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans&display=swap"
             rel="stylesheet"
           />
-          <title>Manual: Men&apos;s Healthcare. Made easy. More than pharmacy</title>
           <link rel="icon" href="/favicon.ico" />
         </Head>
         <body>
