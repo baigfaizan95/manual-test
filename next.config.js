@@ -1,9 +1,9 @@
-const withPlugins = require("next-compose-plugins")
-const withBundleAnalyzer = require("@zeit/next-bundle-analyzer")
-const optimizedImages = require("next-optimized-images")
-const withFonts = require("next-fonts")
-const path = require("path")
-const isDev = process.env.NODE_ENV !== "production"
+const withPlugins = require("next-compose-plugins");
+const withBundleAnalyzer = require("@next/bundle-analyzer")({ enabled: true });
+const optimizedImages = require("next-optimized-images");
+const withFonts = require("next-fonts");
+const path = require("path");
+const isDev = process.env.NODE_ENV !== "production";
 
 const nextConfig = {
   target: "server",
@@ -53,16 +53,16 @@ const nextConfig = {
         test: /\.js$/,
         exclude: /node_modules/,
         loader: "eslint-loader",
-      })
+      });
     }
-    config.resolve.alias["@"] = path.join(__dirname)
+    config.resolve.alias["@"] = path.join(__dirname);
 
-    return config
+    return config;
   },
   builds: [{ src: "next.config.js" }],
-}
+};
 
 module.exports = withPlugins(
   [[withFonts], [withBundleAnalyzer], [optimizedImages, { optimizeImages: false }]],
   nextConfig
-)
+);
