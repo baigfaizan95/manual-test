@@ -1,5 +1,4 @@
 const withPlugins = require("next-compose-plugins");
-const withBundleAnalyzer = require("@next/bundle-analyzer")({ enabled: true });
 const optimizedImages = require("next-optimized-images");
 const withFonts = require("next-fonts");
 const path = require("path");
@@ -63,6 +62,6 @@ const nextConfig = {
 };
 
 module.exports = withPlugins(
-  [[withFonts], [withBundleAnalyzer], [optimizedImages, { optimizeImages: false }]],
+  [[withFonts], [optimizedImages, { optimizeImages: false }]],
   nextConfig
 );

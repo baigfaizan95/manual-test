@@ -6,7 +6,12 @@ const Card = ({ children, className = "", active, onClick }) => {
   const classes = useStyles();
 
   return (
-    <div onClick={onClick} className={`${classes.root} ${active ? classes.active : ""} ${className}`.trim()}>
+    <div
+      onClick={onClick}
+      className={`${classes.root} ${
+        active ? classes.active : ""
+      } ${className}`.trim()}
+    >
       {children}
     </div>
   );
