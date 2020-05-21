@@ -25,8 +25,8 @@ const Banner = () => {
             be good <br /> to yourself
           </h1>
           <p className={classes.description}>
-            We’re working around the clock to bring you a holistic approach to your wellness. From top to bottom, inside
-            and out.
+            We’re working around the clock to bring you a holistic approach to your
+            wellness. From top to bottom, inside and out.
           </p>
           <div className={classes.button}>
             <Button onClick={handleClick}>take the quiz</Button>

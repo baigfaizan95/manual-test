@@ -1,7 +1,7 @@
 import { makeStyles } from "@material-ui/core/styles";
 import variables from "@/styles/variables";
 
-const useStyles = makeStyles((theme) => {
+const useStyles = makeStyles(() => {
   return {
     root: {
       padding: "17px 38px",

@@ -2,7 +2,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import variables, { keys } from "@/styles/variables";
 import { breakpoint } from "@/styles/mixins";
 
-const useStyles = makeStyles((theme) => {
+const useStyles = makeStyles(() => {
   return {
     root: {
       backgroundColor: " #e5f5f4",

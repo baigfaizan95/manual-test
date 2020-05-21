@@ -19,7 +19,7 @@ import { FiThumbsUp } from "react-icons/fi";
 import useStyles from "./quiz.styles";
 import variables from "@/styles/variables";
 
-const steps = ["Type", "Condition A", "Condition B"];
+const steps = Array(questions.length).fill("");
 
 const Quiz = () => {
   const [selection, setSelection] = useState(Array(3).fill(null));

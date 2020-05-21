@@ -67,7 +67,13 @@ const Footer = () => {
             <p className={classes.title}>follow us</p>
             <div>
               {socials.map((social, i) => (
-                <a key={i} className={classes.socialLink} href={social.href} target="_blank" rel="noopenner noreferrer">
+                <a
+                  key={i}
+                  className={classes.socialLink}
+                  href={social.href}
+                  target="_blank"
+                  rel="noopenner noreferrer"
+                >
                   <img src={social.icon} alt="icon" />
                 </a>
               ))}

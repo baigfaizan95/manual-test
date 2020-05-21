@@ -1,21 +1,22 @@
-const withPlugins = require('next-compose-plugins');
-const withBundleAnalyzer = require('@zeit/next-bundle-analyzer');
-const optimizedImages = require('next-optimized-images');
-const withFonts = require('next-fonts');
-const path = require('path');
+const withPlugins = require("next-compose-plugins")
+const withBundleAnalyzer = require("@zeit/next-bundle-analyzer")
+const optimizedImages = require("next-optimized-images")
+const withFonts = require("next-fonts")
+const path = require("path")
+const isDev = process.env.NODE_ENV !== "production"
 
 const nextConfig = {
-  target: 'server',
-  analyzeServer: ['server', 'both'].includes(process.env.BUNDLE_ANALYZE),
-  analyzeBrowser: ['browser', 'both'].includes(process.env.BUNDLE_ANALYZE),
+  target: "server",
+  analyzeServer: ["server", "both"].includes(process.env.BUNDLE_ANALYZE),
+  analyzeBrowser: ["browser", "both"].includes(process.env.BUNDLE_ANALYZE),
   bundleAnalyzerConfig: {
     server: {
-      analyzerMode: 'static',
-      reportFilename: '../bundles/server.html',
+      analyzerMode: "static",
+      reportFilename: "../bundles/server.html",
     },
     browser: {
-      analyzerMode: 'static',
-      reportFilename: '../bundles/client.html',
+      analyzerMode: "static",
+      reportFilename: "../bundles/client.html",
     },
   },
   onDemandEntries: {
@@ -23,17 +24,17 @@ const nextConfig = {
     pagesBufferLength: 10,
   },
   workboxOpts: {
-    swDest: 'static/service-worker.js',
+    swDest: "static/service-worker.js",
     runtimeCaching: [
       {
         urlPattern: /.png$/,
-        handler: 'CacheFirst',
+        handler: "CacheFirst",
       },
       {
         urlPattern: /^https?.*/,
-        handler: 'NetworkFirst',
+        handler: "NetworkFirst",
         options: {
-          cacheName: 'https-calls',
+          cacheName: "https-calls",
           networkTimeoutSeconds: 15,
           expiration: {
             maxEntries: 150,
@@ -47,18 +48,21 @@ const nextConfig = {
     ],
   },
   webpack: (config) => {
-    config.resolve.alias['@'] = path.join(__dirname);
+    if (isDev) {
+      config.module.rules.push({
+        test: /\.js$/,
+        exclude: /node_modules/,
+        loader: "eslint-loader",
+      })
+    }
+    config.resolve.alias["@"] = path.join(__dirname)
 
-    return config;
+    return config
   },
-  builds: [{ src: 'next.config.js' }],
-};
+  builds: [{ src: "next.config.js" }],
+}
 
 module.exports = withPlugins(
-  [
-    [withFonts],
-    [withBundleAnalyzer],
-    [optimizedImages, { optimizeImages: false }],
-  ],
+  [[withFonts], [withBundleAnalyzer], [optimizedImages, { optimizeImages: false }]],
   nextConfig
-);
+)

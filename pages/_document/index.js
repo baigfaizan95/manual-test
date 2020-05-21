@@ -19,7 +19,7 @@ class MyDocument extends Document {
             href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans&display=swap"
             rel="stylesheet"
           />
-          <title>Manual: Men's Healthcare. Made easy. More than pharmacy</title>
+          <title>Manual: Men&apos;s Healthcare. Made easy. More than pharmacy</title>
           <link rel="icon" href="/favicon.ico" />
         </Head>
         <body>
@@ -68,7 +68,10 @@ MyDocument.getInitialProps = async (ctx) => {
   return {
     ...initialProps,
     // Styles fragment is rendered after the app and page rendering finish.
-    styles: [...React.Children.toArray(initialProps.styles), sheets.getStyleElement()],
+    styles: [
+      ...React.Children.toArray(initialProps.styles),
+      sheets.getStyleElement(),
+    ],
   };
 };
 

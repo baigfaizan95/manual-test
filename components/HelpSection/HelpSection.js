@@ -38,7 +38,12 @@ const HelpSection = () => {
           <p className={classes.headline}>What we can help with</p>
           {data.map((d, i) => (
             <div className={classes.data} key={i}>
-              <img className={classes.image} src={d.logo} srcSet={d.srcSet.join(", ")} alt="logo" />
+              <img
+                className={classes.image}
+                src={d.logo}
+                srcSet={d.srcSet.join(", ")}
+                alt="logo"
+              />
               <div className={i % 2 === 0 ? classes.help : classes.helpReverse}>
                 <p className={classes.title}>{d.title}</p>
                 <p className={classes.subTitle}>{d.subTitle}</p>

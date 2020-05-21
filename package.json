@@ -8,7 +8,8 @@
     "start": "next start",
     "prettify": "prettier --write",
     "lint": "eslint",
-    "lint-all": "eslint \"**/*.js\""
+    "lint-all": "eslint \"**/*.js\"",
+    "prettify-all": "prettier --write \"./**/*.{js,json}\""
   },
   "dependencies": {
     "@material-ui/core": "^4.9.14",
@@ -22,6 +23,7 @@
   },
   "devDependencies": {
     "@zeit/next-bundle-analyzer": "^0.1.2",
+    "babel-eslint": "^10.1.0",
     "eslint": "^7.0.0",
     "eslint-config-prettier": "^6.11.0",
     "eslint-loader": "^4.0.2",
@@ -29,7 +31,8 @@
     "eslint-plugin-react": "^7.20.0",
     "next-compose-plugins": "^2.2.0",
     "next-fonts": "^1.1.0",
-    "next-optimized-images": "^2.6.0"
+    "next-optimized-images": "^2.6.0",
+    "pretty-quick": "^2.0.1"
   },
   "husky": {
     "hooks": {
