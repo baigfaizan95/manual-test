@@ -27,6 +27,15 @@ const useStyles = makeStyles(() => {
   };
 });
 
+if (typeof window !== "undefined") {
+  const WebFont = require("webfontloader");
+  WebFont.load({
+    google: {
+      families: ["Montserrat:700", "Open+Sans&display=swap"],
+    },
+  });
+}
+
 const MyApp = ({ Component, pageProps }) => {
   const classes = useStyles();
 
@@ -37,6 +46,7 @@ const MyApp = ({ Component, pageProps }) => {
       jssStyles.parentElement.removeChild(jssStyles);
     }
   }, []);
+
   return (
     <div className={classes.root}>
       <Head>

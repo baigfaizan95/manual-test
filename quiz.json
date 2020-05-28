@@ -47,6 +47,18 @@
           "No": false
         }
       ]
+    },
+    {
+      "question": "Testing how it works",
+      "type": "ChoiceType",
+      "options": [
+        {
+          "Yes": true
+        },
+        {
+          "No": false
+        }
+      ]
     }
   ]
 }

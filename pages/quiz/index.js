@@ -24,7 +24,7 @@ import useStyles from "./quiz.styles";
 import variables from "@/styles/variables";
 
 const Quiz = () => {
-  const [selection, setSelection] = useState(Array(3).fill(null));
+  const [selection, setSelection] = useState(Array(questions.length).fill(null));
   const [activeStep, setActiveStep] = useState(0);
   const [submit, setSubmit] = useState(false);
   const classes = useStyles();
@@ -83,7 +83,7 @@ const Quiz = () => {
             </div>
             <div className={classes.footer}>
               {activeStep !== 0 && <Button onClick={handleBack}>Back</Button>}
-              {activeStep !== 2 && (
+              {activeStep !== questions.length - 1 && (
                 <Button
                   onClick={handleNext}
                   disabled={selection[activeStep] === null}
@@ -91,7 +91,7 @@ const Quiz = () => {
                   Next
                 </Button>
               )}
-              {activeStep === 2 && (
+              {activeStep === questions.length - 1 && (
                 <Button
                   onClick={() => setSubmit(true)}
                   disabled={selection[2] === null}
