@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "DEBUG=1 next build",
     "start": "next start",
     "prettify": "prettier --write",
     "lint": "eslint",

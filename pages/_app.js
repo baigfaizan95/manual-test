@@ -1,5 +1,4 @@
-import React, { useEffect } from "react";
-import App from "next/app";
+import React from "react";
 import Head from "next/head";
 
 /* Library */
@@ -39,14 +38,6 @@ if (typeof window !== "undefined") {
 const MyApp = ({ Component, pageProps }) => {
   const classes = useStyles();
 
-  useEffect(() => {
-    // Remove the server-side injected CSS.
-    const jssStyles = document.querySelector("#jss-server-side");
-    if (jssStyles) {
-      jssStyles.parentElement.removeChild(jssStyles);
-    }
-  }, []);
-
   return (
     <div className={classes.root}>
       <Head>
@@ -63,11 +54,6 @@ const MyApp = ({ Component, pageProps }) => {
       </ThemeProvider>
     </div>
   );
-};
-
-MyApp.getInitialProps = async (appContext) => {
-  const pageProps = await App.getInitialProps(appContext);
-  return { ...pageProps };
 };
 
 export default MyApp;
